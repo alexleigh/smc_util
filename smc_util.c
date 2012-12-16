@@ -1,9 +1,9 @@
 /*
- * Apple System Management Control (SMC) Tool 
- * Copyright (C) 2006 devnull 
+ * Apple System Management Control (SMC) Utility
+ * Copyright (C) 2012 Alex Leigh
  *
  * Compile with:
- * cc ./smc_util.c  -o smc_util -framework IOKit -framework CoreFoundation -Wno-four-char-constants -Wall -g -arch i386
+ * cc smc_util.c -o smc_util -framework IOKit -framework CoreFoundation -Wno-four-char-constants -Wall -g -arch i386
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -12,12 +12,11 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include <unistd.h>
@@ -26,7 +25,6 @@
 #include <sys/types.h>
 #include <string.h>
 #include <IOKit/IOKitLib.h>
-
 #include "smc_util.h"
 
 io_connect_t conn;
@@ -327,7 +325,7 @@ kern_return_t SMCPrintFans(void) {
 }
 
 void usage(char* prog) {
-        printf("Apple System Management Control (SMC) tool %s\n", VERSION);
+        printf("Apple System Management Control (SMC) Utility %s\n", VERSION);
         printf("Usage:\n");
         printf("%s [options]\n", prog);
         printf("    -f         : fan info decoded\n");
